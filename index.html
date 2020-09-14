@@ -6,15 +6,29 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="stylesheet" href="styles.css">
+<script src="lab1.js"></script>
+
 </head>
 <body>
 
-<h1>Pokedex</h1> 
+<h1 class="description">Pokedex</h1> 
+
+<div class="numbersearchbar">
+<input type="search" id="numbersearch" placeholder="Search by Number">
+</div>
+
+<div class="namesearchbar">
+    <input type="search" id="namesearch"placeholder="Search by Name">
+</div>
+
+<div class="submitbutton">
+<button onclick="submit()"  id="submitbutton" >Search</button>
+</div>
 
 <ul class="no-bullet">
     <li>
         <div class="card">
-            <h3 class="description">001 - Bulbasaur</h3>
+            <h3 class="description">1 - Bulbasaur</h3>
             <img src="Lab1-pokemon-images\1.png" alt="Bulbasaur"  >
             <label class="description">Grass/Poison</label>
         </div>
@@ -22,41 +36,45 @@
     
     <li>
         <div class="card">
-            <h3 class="description">002 - Ivysaur</h3>
+            <h3 class="description">2 - Ivysaur</h3>
             <img src="Lab1-pokemon-images\2.png" alt="Ivysaur" >
             <label class="description">Grass/Poison</label>
         </div>
     </li>
     <li>
         <div class="card">
-        <h3 class="description">003 - Venusaur</h3>
+        <h3 class="description">3 - Venusaur</h3>
         <img src="Lab1-pokemon-images\3.png" alt="Venusaur">
         <label class="description">Grass/Poison</label>
         </div>
     </li>
     <li>
         <div class="card">
-        <h3>Charmander</h3>
+        <h3>004 - Charmander</h3>
         <img src="Lab1-pokemon-images\4.png" >
         <label class="description">Fire</label>
         </div>
     </li>
     <li>
         <div class="card">
-        <h3>Charmeleon</h3>
+        <h3>005 - Charmeleon</h3>
         <img src="Lab1-pokemon-images\5.png" >
         <label class="description">Fire</label>
         </div>
     </li>
     <li>
         <div class="card">
-        <h3>Charizard</h3>
-        <img src="Lab1-pokemon-images\6.png" width height = 100px >
+        <h3>006 - Charizard</h3>
+        <img src="Lab1-pokemon-images\6.png">
+        <label class="description">Fire/Flying</label>
     </div>
     </li>
     <li>
+        <div class="card">
         <h3>Squirtle</h3>
         <img src="Lab1-pokemon-images\7.png" width height = 100px >
+        <label class="description">Water</label>
+        </div>
     </li>
     <li>
         <h3>Wartortle</h3>
@@ -115,4 +133,8 @@
 
 <!-- Embedded JavaScript go here -->
 </body>
+
+<a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset" This is an href></a>
+
+
 </html>

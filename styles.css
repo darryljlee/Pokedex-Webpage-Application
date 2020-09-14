@@ -9,8 +9,19 @@ ul.no-bullet {
       float:left;
       margin:10px;
       padding: 30px;
-     
   }
+
+  .numbersearchbar{
+      text-align:center;
+  }
+
+  .namesearchbar{
+    text-align:center;
+}
+
+.submitbutton{
+    text-align: center;
+}
 
 
   .card{
