@@ -129,16 +129,19 @@ function storeName(){
         else if (!isValid){
             alert("Name must contain characters from A-Z. Please try again.") //checks to see if all characters are between A-Z/a-z 
             break;       
+        }
+        else{
+            alert("Your search wasn't found")
+            break;
         } 
     }
 }
 
 function nameAccepted(){
-    console.log("you are accepted")
     let count = 0;
     allStored = [];
     
-    for (i=0; i< pokedex.length; i++){
+    for (i=0; i < pokedex.length; i++){
         if(pokedex[i].name.toLowerCase().includes(String(userInputName).toLowerCase()) && count < 5 ){ //if you type in something that matches anything in pokedex array
             console.log("success")
             count = count + 1;
@@ -148,10 +151,7 @@ function nameAccepted(){
             allStored.push(pokedex[i])
             
             console.log(allStored)
-            
-            
         }
-        
     }   
     
     
@@ -167,17 +167,55 @@ function nameAccepted(){
 }
 
 
+function storeNumber () {
+    userInputNumber = document.getElementById('numbersearch').value;
+    if(userInputNumber > 21 || userInputNumber <= 0 || isNaN(userInputNumber)){
+        alert("Invalid number input. Please enter a number between 1-20.")
+    }
+    else{
+        numberAccepted();
+    }
+}
+
+function numberAccepted(){
+    console.log("Your number was accepted!")
+    let numberCount = 0;
+    newStored = [];
+
+    for (i=0; i< pokedex.length; i++){
+        if (String(pokedex[i].id).includes(String(userInputNumber)) && numberCount < 5){
+            console.log("hello, you made it into the if statement")
+            numberCount = numberCount + 1;
+            console.log(numberCount)
+
+            console.log(pokedex[i].name)
+            newStored.push(pokedex[i])
+            console.log(newStored)
+        }
+    }
+    Object.prototype.toString = function() {
+        var output = "";
+        for (var i in this) {
+          output += i + ": " + this[i] ;
+        }
+        return output;
+      }
+      alert(JSON.stringify(newStored)) // formerly alert(JSON.stringify(allStored,null,3)). 
+}
 
 
+
+
+
+
+// I think I could either try to see if the user inputted number is in "id" or I could check if it's inside local variable i. If I can do the second one that'd give me more room for description
     
 
 
 
 
 
-//This is for number search box:
 
-let numberReceived = "the variable that stores the user input"
 
 
 /*
@@ -202,11 +240,7 @@ const displayPokemon = (pokemons) => {
 };
 
 
-displayPokemon();
-*/
 
-
-/*
 
 function submit(){
     var submit;
