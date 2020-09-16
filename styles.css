@@ -13,19 +13,24 @@ ul.no-bullet {
 
   .numbersearchbar{
       text-align:center;
+     
   }
 
   .namesearchbar{
     text-align:center;
 }
 
-.submitbutton{
+.submitNumberButton{
+    text-align: center;
+}
+.submitNameButton{
     text-align: center;
 }
 
 
   .card{
-      height: 320px;
+      padding-top: 5%;
+      height: 380px;
       width: 280px;
       box-shadow: 0 4px 20px 0 rgba(0,0,0,0.2)
   }
@@ -47,7 +52,6 @@ ul.no-bullet {
 
   .card{
     text-align: center
-
   }
 
  
