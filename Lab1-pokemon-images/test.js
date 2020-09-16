@@ -1,53 +1,46 @@
-function myFunction(){
-    document.getElementById("myDropDown").classList.toggle("show")
-}
-
 const list = document.getElementsByClassName('no-bullet');
-
 
 const pokedex = [
     {
         id:1,
         name: "Bulbasaur",
-        Description: "Grass/Poison Type -- Rarity:6 "
+        type: "Grass/Poison",
+        image: "Lab1-pokemon-images\1.png"
     },
     {
         id:2,
-        name: "Ivysaur", type: "Grass/Poison"
+        name: "Ivysaur",
+        type: "Grass/Poison"
     },
     {
         id:3,
         name: "Venusaur",
-        type: "Grass/Poison Type. Rarity: 6"
+        type: "Grass/Poison"
     },
     {
         id:4,
         name: "Charmander",
         type: "Fire"
- 
     },
     {
         id:5,
         name: "Charmeleon",
         type: "Fire"
-    
     },
     {
         id:6,
         name: "Charizard",
         type: "Fire/Flying"
-      
     },
     {
         id:7,
         name: "Squirtle",
         type: "Water"
-       
     },
     {
         id:8,
         name: "Wartortle",
-        type: "Water"     
+        type: "Water"
     },
     {
         id:9,
@@ -87,17 +80,17 @@ const pokedex = [
     {
         id:16,
         name: "Pidgey",
-        type: "Normal/Flying"
+        type: "Flying/Normal"
     },
     {
         id:17,
         name: "Pidgeot",
-        type: "Normal/Flying"
+        type: "Flying/Normal"
     },
     {
         id:18,
         name: "Pidgeotto",
-        type: "Normal/Flying"
+        type: "Flying/Normal"
     },
     {
         id:19,
@@ -111,76 +104,6 @@ const pokedex = [
     },
 ]
 
-
-function storeName(){
-    userInputName = document.getElementById('namesearch').value;
-    var letters = /^[A-Za-z]+$/;
-    var isValid = letters.test(document.getElementById('namesearch').value);
-    console.log(userInputName)
-    
-    for (i=0;i<pokedex.length;i++){
-        if(pokedex[i].name.toLowerCase().includes(String(userInputName).toLowerCase())){
-            nameAccepted();
-        }
-        else if (userInputName.length > 20){
-            alert("Name must contain less than 20 characters")
-            break;
-        }
-        else if (!isValid){
-            alert("Name must contain characters from A-Z. Please try again.") //checks to see if all characters are between A-Z/a-z 
-            break;       
-        } 
-    }
-}
-
-function nameAccepted(){
-    console.log("you are accepted")
-    let count = 0;
-    allStored = [];
-    
-    for (i=0; i< pokedex.length; i++){
-        if(pokedex[i].name.toLowerCase().includes(String(userInputName).toLowerCase()) && count < 5 ){ //if you type in something that matches anything in pokedex array
-            console.log("success")
-            count = count + 1;
-            console.log(count)
-
-            console.log(pokedex[i].name)
-            allStored.push(pokedex[i])
-            
-            console.log(allStored)
-            
-            
-        }
-        
-    }   
-    
-    
-    Object.prototype.toString = function() {
-        var output = "";
-        for (var i in this) {
-          output += i + ": " + this[i] ;
-        }
-        return output;
-      }
-      alert(JSON.stringify(allStored)) // formerly alert(JSON.stringify(allStored,null,3)). 
-
-}
-
-
-
-
-    
-
-
-
-
-
-//This is for number search box:
-
-let numberReceived = "the variable that stores the user input"
-
-
-/*
 displayPokemon(pokedex);
 
 
@@ -203,7 +126,7 @@ const displayPokemon = (pokemons) => {
 
 
 displayPokemon();
-*/
+
 
 
 /*
@@ -229,4 +152,3 @@ li = ul.getElementsByTagName("li");
 
 //make a submit function
 */
-
