@@ -1,15 +1,8 @@
-function myFunction(){
-    document.getElementById("myDropDown").classList.toggle("show")
-}
-
-const list = document.getElementsByClassName('no-bullet');
-
-
-const pokedex = [
+const pokedex = [ //created an array where each index stored a Pokemon object and its respective attributes
     {
-        id: 1,
-        name: "Bulbasaur", 
-        type: "Grass/Poison. Rarity:4 "
+        id: 1, //attribute for the pokemon's number in the Official Pokedex
+        name: "Bulbasaur",  // "name" is the attribute of the Pokemon's name
+        type: "Grass/Poison. Rarity:4 " //"type" is the attribute storing the Pokemon's general description, such as its Type and Rarity
     },
     {
         id:2,
@@ -113,81 +106,75 @@ const pokedex = [
 ]
 
 
-function storeName(){
-    userInputName = document.getElementById('namesearch').value;
-    var letters = /^[A-Za-z]+$/;
-    var isValid = letters.test(document.getElementById('namesearch').value);
-    console.log(userInputName)
+function storeName(){ //function storeName() is used to validate user input in the name search bar
+    userInputName = document.getElementById('namesearch').value;    //create variable userInputName and store the user's input from the name search bar
+    var letters = /^[A-Za-z]+$/;                                    //create a variable called letters that stores the english alphabet's letters
+    var isValid = letters.test(document.getElementById('namesearch').value); //isValid is used to check the user's input with letters to see if they inputted english letters only
     
-    for (i=0;i<pokedex.length;i++){
-        if(pokedex[i].name.toLowerCase().includes(String(userInputName).toLowerCase())){
-            nameAccepted();
+    
+    for (i=0;i<pokedex.length;i++){     // for loop to iterate through the entire pokedex array to check if input matches anything in the array
+        if(pokedex[i].name.toLowerCase().includes(String(userInputName).toLowerCase())){ //check if any character in user input is inside any Pokemon Object's name 
+            nameAccepted(); //if a match is made, execute the nameAccepted() function
         }
-        else if (userInputName.length > 20){
+        else if (userInputName.length > 20){ //if the user's input is greater than 20 characters, alert pops up and break from for loop
             alert("Name must contain less than 20 characters")
             break;
         }
-        else if (String(userInputName).indexOf(' ') >= 0 ){
-            alert("DON'T INPUT SPACES TRY AGAIN")
+        else if (String(userInputName).indexOf(' ') >= 0 ){ //if there are any spaces in the user input, shjow alert and break from for loop
+            alert("Input does not allow spaces, please try again.")
             break;
         }
         else if (!isValid){
-            alert("Name must contain characters from A-Z. Please try again.") //checks to see if all characters are between A-Z/a-z 
+            alert("Name must contain characters from A-Z. Please try again.") //checks to see if all inputted characters are between A-Z/a-z
             break;       
         }
      }
 }
 
 function nameAccepted(){
-    let count = 0;
-    allStored = [];
+    let count = 0; 
+    allStored = []; //create array called allStored that holds all the search results that match the user input
     
-    for (i=0; i < pokedex.length; i++){
-        if(pokedex[i].name.toLowerCase().includes(String(userInputName).toLowerCase()) && count < 5 ){ //if you type in something that matches anything in pokedex array
-            //console.log("success")
-            count = count + 1;
-            //console.log(count)
-
-           // console.log(pokedex[i].name)
-            allStored.push(pokedex[i])
-            
-            console.log(allStored)
+    for (i=0; i < pokedex.length; i++){ //iterate through the length of the pokedex array
+        if(pokedex[i].name.toLowerCase().includes(String(userInputName).toLowerCase()) && count < 5 ){ //checks if any character in user input matches a Pokemon's name AND if count < 5. Once 5 results are received, leave for loop
+            count = count + 1; //increments for each successful search match
+            allStored.push(pokedex[i]) //push each Pokemon Object that matches search results into allStored 
         }
     }     
-    alert(JSON.stringify(allStored)) // formerly alert(JSON.stringify(allStored,null,3)). 
+    alert(JSON.stringify(allStored)) // alert prints out the Pokemon objects in allStored array 
 }
 
 
-function storeNumber () {
-    userInputNumber = document.getElementById('numbersearch').value;
-    for (i=0;i<pokedex.length;i++){
-    if(String(pokedex[i].id).includes(String(userInputNumber))){
+function storeNumber () { //function storeNumber() is used to validate user input in the name search bar
+    userInputNumber = document.getElementById('numbersearch').value; //create variable that stores whatever user inputs
+
+    for (i=0;i<pokedex.length;i++){ //iterate length of pokedex array
+    if(String(pokedex[i].id).includes(String(userInputNumber))){ //if any pokemon ids include any characters from userInput, execute numberAccepted() function
         numberAccepted();
     }
-    else if(userInputNumber >= 21 || userInputNumber <= 0){
+    else if(userInputNumber >= 21 || userInputNumber <= 0){ //if user input puts any number > = 21 or less than/equal to 0 then alert and break from loop
         alert("Invalid input. Please enter a number between 1-20.")
         break;
     }
-    else if(String(userInputNumber).indexOf('') >=0){
+    else if(String(userInputNumber).indexOf(' ') >=0){ //if user input puts any spaces, alert and break from loop
         alert("Don't input spaces please, try again.")
         break;
     }
-    else if (isNaN(userInputNumber)){
+    else if (isNaN(userInputNumber)){//if any special characters are entered in the number search bar, alert and then break from loop
         alert("Please enter a numerical value only (i.e. no letters, special characters or spaces)")
         break;
     }
     }
 }
-function numberAccepted(){
-    console.log("Your number was accepted!")
+function numberAccepted(){ //if number inputted from user matches any "ids" in pokedex array
     let numberCount = 0;
-    newStored = [];
+    newStored = []; //create an array that stores the Pokemon objects that satisfy input from number search bar
 
-    for (i=0; i< pokedex.length; i++){
-        if (String(pokedex[i].id).includes(String(userInputNumber)) && numberCount < 5){
+    for (i=0; i< pokedex.length; i++){ 
+        if (String(pokedex[i].id).includes(String(userInputNumber)) && numberCount < 5){ //checks if any character in user input matches a Pokemon's name AND if numberCount < 5. Once 5 results are received, leave for loop
             numberCount = numberCount + 1;
-            newStored.push(pokedex[i])
+            newStored.push(pokedex[i]) //push matching Pokemon Object search result into newStored array
         }
     }
-      alert(JSON.stringify(newStored)) // formerly alert(JSON.stringify(allStored,null,3)). 
+      alert(JSON.stringify(newStored)) // print the array that stores all  Pokemon Object search results
 }
