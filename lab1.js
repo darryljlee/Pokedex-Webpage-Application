@@ -7,107 +7,108 @@ const list = document.getElementsByClassName('no-bullet');
 
 const pokedex = [
     {
-        id:1,
-        name: "Bulbasaur",
-        Description: "Grass/Poison Type -- Rarity:6 "
+        id: 1,
+        name: "Bulbasaur", 
+        type: "Grass/Poison. Rarity:4 "
     },
     {
         id:2,
-        name: "Ivysaur", type: "Grass/Poison"
+        name: "Ivysaur", 
+        type: "Grass/Poison. Rarity:5"
     },
     {
         id:3,
         name: "Venusaur",
-        type: "Grass/Poison Type. Rarity: 6"
+        type: "Grass/Poison. Rarity: 6"
     },
     {
         id:4,
         name: "Charmander",
-        type: "Fire"
+        type: "Fire.  Rarity:4"
  
     },
     {
         id:5,
         name: "Charmeleon",
-        type: "Fire"
+        type: "Fire. Rarity:5"
     
     },
     {
         id:6,
         name: "Charizard",
-        type: "Fire/Flying"
+        type: "Fire/Flying.  Rarity:6"
       
     },
     {
         id:7,
         name: "Squirtle",
-        type: "Water"
+        type: "Water.  Rarity:4"
        
     },
     {
         id:8,
         name: "Wartortle",
-        type: "Water"     
+        type: "Water. Rarity:5"     
     },
     {
         id:9,
         name: "Blastoise",
-        type: "Water"
+        type: "Water.  Rarity:6 "
     },
     {
         id:10,
         name: "Caterpie",
-        type: "Bug"
+        type: "Bug.  Rarity:1"
     },
     {
         id:11,
         name: "Metapod",
-        type: "Bug"
+        type: "Bug.  Rarity:3"
     },
     {
         id:12,
         name: "Butterfree",
-        type: "Bug/Flying"
+        type: "Bug/Flying.  Rarity:4"
     },
     {
         id:13,
         name: "Weedle",
-        type: "Bug/Poison"
+        type: "Bug/Poison.  Rarity:1"
     },
     {
         id:14,
         name: "Kakuna",
-        type: "Bug/Poison"
+        type: "Bug/Poison.  Rarity:3"
     },
     {
         id:15,
         name: "Beedrill",
-        type: "Bug/Poison"
+        type: "Bug/Poison.  Rarity:4"
     },
     {
         id:16,
         name: "Pidgey",
-        type: "Normal/Flying"
+        type: "Normal/Flying.  Rarity:1"
     },
     {
         id:17,
-        name: "Pidgeot",
-        type: "Normal/Flying"
+        name: "Pidgeotto",
+        type: "Normal/Flying.  Rarity:3"
     },
     {
         id:18,
-        name: "Pidgeotto",
-        type: "Normal/Flying"
+        name: "Pidgeot",
+        type: "Normal/Flying.  Rarity:4"
     },
     {
         id:19,
         name: "Rattata",
-        type: "Normal"
+        type: "Normal.  Rarity:1"
     },
     {
         id:20,
         name: "Raticate",
-        type: "Normal"
+        type: "Normal.  Rarity:4"
     },
 ]
 
@@ -126,15 +127,15 @@ function storeName(){
             alert("Name must contain less than 20 characters")
             break;
         }
+        else if (String(userInputName).indexOf(' ') >= 0 ){
+            alert("DON'T INPUT SPACES TRY AGAIN")
+            break;
+        }
         else if (!isValid){
             alert("Name must contain characters from A-Z. Please try again.") //checks to see if all characters are between A-Z/a-z 
             break;       
         }
-        else{
-            alert("Your search wasn't found")
-            break;
-        } 
-    }
+     }
 }
 
 function nameAccepted(){
@@ -143,40 +144,40 @@ function nameAccepted(){
     
     for (i=0; i < pokedex.length; i++){
         if(pokedex[i].name.toLowerCase().includes(String(userInputName).toLowerCase()) && count < 5 ){ //if you type in something that matches anything in pokedex array
-            console.log("success")
+            //console.log("success")
             count = count + 1;
-            console.log(count)
+            //console.log(count)
 
-            console.log(pokedex[i].name)
+           // console.log(pokedex[i].name)
             allStored.push(pokedex[i])
             
             console.log(allStored)
         }
-    }   
-    
-    
-    Object.prototype.toString = function() {
-        var output = "";
-        for (var i in this) {
-          output += i + ": " + this[i] ;
-        }
-        return output;
-      }
-      alert(JSON.stringify(allStored)) // formerly alert(JSON.stringify(allStored,null,3)). 
-
+    }     
+    alert(JSON.stringify(allStored)) // formerly alert(JSON.stringify(allStored,null,3)). 
 }
 
 
 function storeNumber () {
     userInputNumber = document.getElementById('numbersearch').value;
-    if(userInputNumber > 21 || userInputNumber <= 0 || isNaN(userInputNumber)){
-        alert("Invalid number input. Please enter a number between 1-20.")
-    }
-    else{
+    for (i=0;i<pokedex.length;i++){
+    if(String(pokedex[i].id).includes(String(userInputNumber))){
         numberAccepted();
     }
+    else if(userInputNumber >= 21 || userInputNumber <= 0){
+        alert("Invalid input. Please enter a number between 1-20.")
+        break;
+    }
+    else if(String(userInputNumber).indexOf('') >=0){
+        alert("Don't input spaces please, try again.")
+        break;
+    }
+    else if (isNaN(userInputNumber)){
+        alert("Please enter a numerical value only (i.e. no letters, special characters or spaces)")
+        break;
+    }
+    }
 }
-
 function numberAccepted(){
     console.log("Your number was accepted!")
     let numberCount = 0;
@@ -184,83 +185,9 @@ function numberAccepted(){
 
     for (i=0; i< pokedex.length; i++){
         if (String(pokedex[i].id).includes(String(userInputNumber)) && numberCount < 5){
-            console.log("hello, you made it into the if statement")
             numberCount = numberCount + 1;
-            console.log(numberCount)
-
-            console.log(pokedex[i].name)
             newStored.push(pokedex[i])
-            console.log(newStored)
         }
     }
-    Object.prototype.toString = function() {
-        var output = "";
-        for (var i in this) {
-          output += i + ": " + this[i] ;
-        }
-        return output;
-      }
       alert(JSON.stringify(newStored)) // formerly alert(JSON.stringify(allStored,null,3)). 
 }
-
-
-
-
-
-
-// I think I could either try to see if the user inputted number is in "id" or I could check if it's inside local variable i. If I can do the second one that'd give me more room for description
-    
-
-
-
-
-
-
-
-
-/*
-displayPokemon(pokedex);
-
-
-const displayPokemon = (pokemons) => {
-    const htmlString = pokemons.map((pokemon) => {
-        return `
-        <li class="character">
-                <h2>${pokemon.name}</h2>
-                <p>Type: ${pokemon.type}</p>
-                <img src="${pokemon.image}"></img>
-            </li>
-        `;
-
-    })
-    .join('');
-
-    list.innerHTML = htmlString;
-
-};
-
-
-
-
-function submit(){
-    var submit;
-    submit = document.getElementById("submitbutton").value;
-}
-
-//one input output for numbers
-//one input output for naming
-
-function numberFunction(){
-var number; 
-
-numberUserInput = document.getElementById("numbersearch").value;
-
-ul = document.getElementById("no-bullet");
-li = ul.getElementsByTagName("li");
-
-}
-
-
-//make a submit function
-*/
-

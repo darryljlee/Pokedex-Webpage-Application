@@ -11,7 +11,8 @@
 </head>
 <body>
 
-<h1 class="description">Pokédex</h1> 
+<h1 class="header">Pokédex</h1> 
+<h2 class="header">Created by Darryl Lee</h2>
 <!--
 <div class="numbersearchbar">
 <input type="number" min="1" max="20" id="numbersearch"  placeholder="Searchhh by Number">
@@ -22,178 +23,221 @@
     <input  type="text" id="numbersearch" placeholder="Search by Number" />
     <input  type="submit"  onclick="storeNumber()" />
 </form>
-
+<br>
 <form id="form" class="namesearchbar" onsubmit="return false;">
     <input  type="text" id="namesearch" placeholder="Search by Name" />
     <input  type="submit"  onclick="storeName()" />
 </form>
 
-<!--
-<div class="namesearchbar">
-    <div id="nameDropdown" class="dropdown-content">
-    <input maxlength="20" type="text" onclick="myFunction()" id="namesearch"placeholder="Search by Name">
-    </div>
-</div>
--->
-
-<!--
-<div class="submitNumberButton">
-<button onclick="submit()"  id="submitbutton" >Search By Number</button>
-</div>
-
-<div class="submitNameButton">
-    <button onclick="submit()"  id="submitbutton" >Search By Name</button>
-    </div>
-
--->
 
 <ul class="no-bullet">
     <li>
         <div class="card">
-            <h3 class="description">Bulbasaur </h3>
-            <img src="Lab1-pokemon-images\1.png" alt="Bulbasaur"  >
-            <label class="description">Grass/Poison</label>
+            <h3 class="description">#1 - Bulbasaur</h3>
+            <img src="Lab1-pokemon-images\1.png" alt="Bulbasaur" >
+            <label class="description">Type: Grass/Poison
+                <br>
+                Rarity:4
+            </label>
         </div>
     </li>
     <li>
         <div class="card">
-            <h3 class="description">2 - Ivysaur</h3>
+            <h3 class="description">#2 - Ivysaur</h3>
             <img src="Lab1-pokemon-images\2.png" alt="Ivysaur" >
-            <label class="description">Grass/Poison</label>
+            <label class="description">Type: Grass/Poison
+                <br>
+                Rarity:5
+            </label>
         </div>
     </li>
     <li>
         <div class="card">
-        <h3 class="description">3 - Venusaur</h3>
+        <h3 class="description">#3 - Venusaur</h3>
         <img src="Lab1-pokemon-images\3.png" alt="Venusaur">
-        <label class="description">Grass/Poison</label>
+        <label class="description">Type: Grass/Poison
+            <br>
+            Rarity:6
+        </label>
         </div>
     </li>
     <li>
         <div class="card">
-        <h3>4 - Charmander</h3>
+        <h3 class="description">#4 - Charmander</h3>
         <img src="Lab1-pokemon-images\4.png" >
-        <label class="description">Fire</label>
+        <label class="description">Type: Fire
+            <br>
+            Rarity:4
+        </label>
         </div>
     </li>
     <li>
         <div class="card">
-        <h3>5 - Charmeleon</h3>
+        <h3 class="description">#5 - Charmeleon</h3>
         <img src="Lab1-pokemon-images\5.png" >
-        <label class="description">Fire</label>
+        <label class="description">Type: Fire
+            <br>
+            Rarity:5
+        </label>
         </div>
     </li>
     <li>
         <div class="card">
-        <h3>6 - Charizard</h3>
+        <h3 class="description">#6 - Charizard</h3>
         <img src="Lab1-pokemon-images\6.png">
-        <label class="description">Fire/Flying</label>
+        <label class="description">Type: Fire/Flying
+            <br>
+            Rarity:6
+        </label>
     </div>
     </li>
     <li>
         <div class="card">
-        <h3>7 - Squirtle</h3>
+        <h3 class="description">#7 - Squirtle</h3>
         <img src="Lab1-pokemon-images\7.png" >
-        <label class="description">Water</label>
+        <label class="description">Type: Water
+            <br>
+            Rarity:4
+        </label>
         </div>
     </li>
     <li>
         <div class="card">
-        <h3>8 - Wartortle</h3>
+        <h3 class="description">#8 - Wartortle</h3>
         <img src="Lab1-pokemon-images\8.png" >
-        <label class="description">Water</label>
+        <label class="description">Type: Water
+            <br>
+            Rarity:5
+        </label>
     </div>
     </li>
     <li>
         <div class="card">
-        <h3>9 - Blastoise</h3>
+        <h3 class="description">#9 - Blastoise</h3>
         <img src="Lab1-pokemon-images\9.png"  >
-        <label class="description">Water</label>
+        <label class="description">Type: Water
+            <br>
+            Rarity:6
+        </label>
         </div>
     </li>
     <li>
         <div class="card">
-        <h3>10 - Caterpie</h3>
+        <h3 class="description">#10 - Caterpie</h3>
         <img src="Lab1-pokemon-images\10.png"  >
-        <label class="description">Bug</label>
+        <label class="description">Type: Bug
+            <br>
+            Rarity:1
+        </label>
         </div>
     </li>
     <li>
         <div class="card">
-        <h3>11 - Metapod</h3>
+        <h3 class="description">#11 - Metapod</h3>
         <img src="Lab1-pokemon-images\11.png"  >
-        <label class="description">Bug</label>
+        <label class="description">Type: Bug
+            <br>
+            Rarity:3
+        </label>
         </div>
     </li>
     <li>
         <div class="card">
-        <h3>12 - Butterfree</h3>
+        <h3 class="description">#12 - Butterfree</h3>
         <img src="Lab1-pokemon-images\12.png"  >
-        <label class="description">Bug/Flying</label>
+        <label class="description">Type: Bug/Flying
+            <br>
+            Rarity:4
+        </label>
         </div>
     </li>
     <li>
         <div class="card">
-        <h3>13 - Weedle</h3>
+        <h3 class="description">#13 - Weedle</h3>
         <img src="Lab1-pokemon-images\13.png"  >
-        <label class="description">Bug/Poison</label>
+        <label class="description">Type: Bug/Poison
+            <br>
+            Rarity:1
+        </label>
         </div>
     </li>
     <li>
         <div class="card">
-        <h3>14 - Kakuna</h3>
+        <h3 class="description">#14 - Kakuna</h3>
         <img src="Lab1-pokemon-images\14.png"  >
-        <label class="description">Bug/Poison</label>
+        <label class="description">Type: Bug/Poison
+            <br>
+            Rarity:3
+        </label>
         </div>
     </li>
     <li>
         <div class="card">
-        <h3>15 - Beedrill</h3>
+        <h3 class="description">#15 - Beedrill</h3>
         <img src="Lab1-pokemon-images\15.png" >
-        <label class="description">Bug/Poison</label>
-        </div>
-    </li>
-    <li>
-        <div class="card"> 
-        <h3>16 - Pidgey</h3>
-        <img src="Lab1-pokemon-images\16.png"  >
-        <label class="description">Flying/Normal</label>
-         </div>
-    </li>
-    <li>
-        <div class="card"> 
-        <h3>17 - Pidgeot</h3>
-        <img src="Lab1-pokemon-images\17.png" >
-        <label class="description">Flying/Normal
+        <label class="description">Type: Bug/Poison
+            <br>
+            Rarity:4
         </label>
         </div>
     </li>
     <li>
         <div class="card"> 
-        <h3>18 - Pidgeotto</h3>
+        <h3 class="description">#16 - Pidgey</h3>
+        <img src="Lab1-pokemon-images\16.png"  >
+        <label class="description">Type: Flying/Normal
+            <br>
+            Rarity:1
+        </label>
+         </div>
+    </li>
+    <li>
+        <div class="card"> 
+        <h3 class="description">#17 - Pidgeotto</h3>
+        <img src="Lab1-pokemon-images\17.png" >
+        <label class="description">Type: Flying/Normal
+            <br>
+            Rarity:3
+        </label>
+        </div>
+    </li>
+    <li>
+        <div class="card"> 
+        <h3 class="description">#18 - Pidgeot</h3>
         <img src="Lab1-pokemon-images\18.png">
-        <label class="description">Flying/Normal</label>
+        <label class="description">Type: Flying/Normal
+            <br>
+            Rarity:4
+        </label>
         </div>
     </li>
     <li>
         <div class="card"> 
-        <h3>19 - Rattata</h3>
+        <h3 class="description">#19 - Rattata</h3>
         <img src="Lab1-pokemon-images\19.png"  >
-        <label class="description">Normal</label>
+        <label class="description">Type: Normal
+            <br>
+            Rarity:1
+        </label>
         </div>
     </li>
     <li>
         <div class="card"> 
-        <h3>20 - Raticate</h3>
+        <h3 class="description">#20 - Raticate</h3>
         <img src="Lab1-pokemon-images\20.png"  >
-        <label class="description">Normal</label>
+        <label class="description">Type: Normal
+            <br>
+            Rarity:4
+        </label>
         </div>
     </li>
 
 </ul>
-<h4 class="description">References</h4>
-<a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"> Pokemon Images Downloaded From Kaggle</a>
-<a  href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/"> Pokemon Descriptions and Stats from Reddit </a>
+<h3 class="description">References</h3>
+<a class="references" href="https://www.kaggle.com/kvpratama/pokemon-images-dataset"> Pokemon Images Downloaded From Kaggle</a>
+<br>
+<a class="references" href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/"> Pokemon Descriptions and Stats from Reddit </a>
+
 <!-- Embedded JavaScript go here -->
 </body>
 

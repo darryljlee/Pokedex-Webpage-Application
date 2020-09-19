@@ -10,7 +10,10 @@ ul.no-bullet {
       margin:10px;
       padding: 30px;
   }
-
+  .header{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      text-align: center;
+  }
   .numbersearchbar{
       text-align:center;
      
@@ -31,27 +34,37 @@ ul.no-bullet {
   .card{
       padding-top: 5%;
       height: 380px;
-      width: 280px;
-      box-shadow: 0 4px 20px 0 rgba(0,0,0,0.2)
+      width: 290px;
+      box-shadow: 0 4px 20px 0 rgba(0,0,0,0.9);
+      background-color: antiquewhite;
+      text-align: center;
+     color: black;
+    border-radius: 5%;
   }
   
- 
+ .references{
+     text-align: center;
+     display: block;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
 
   .description{
       text-align: center;
+      font-family:Verdana, Geneva, Tahoma, sans-serif ; 
   }
 
-  .card hover{
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6)
-  }
 
   .card img{
       width: fit-content;
       height: fit-content;
+      border: 4px solid #555;
+      border-radius: 10%;
+      background-color: white;
+      
   }
 
-  .card{
-    text-align: center
-  }
+  
+
+  
 
  
