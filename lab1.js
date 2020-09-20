@@ -110,7 +110,7 @@ function storeName(){ //function storeName() is used to validate user input in t
     userInputName = document.getElementById('namesearch').value;    //create variable userInputName and store the user's input from the name search bar
     var letters = /^[A-Za-z]+$/;                                    //create a variable called letters that stores the english alphabet's letters
     var isValid = letters.test(document.getElementById('namesearch').value); //isValid is used to check the user's input with letters to see if they inputted english letters only
-    
+    //
     
     for (i=0;i<pokedex.length;i++){     // for loop to iterate through the entire pokedex array to check if input matches anything in the array
         if(pokedex[i].name.toLowerCase().includes(String(userInputName).toLowerCase())){ //check if any character in user input is inside any Pokemon Object's name 
