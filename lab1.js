@@ -1,3 +1,4 @@
+//initial commit comment, testing if pushing to new 'lab2' branch is working.
 const pokedex = [ //created an array where each index stored a Pokemon object and its respective attributes
     {
         id: 1, //attribute for the pokemon's number in the Official Pokedex
