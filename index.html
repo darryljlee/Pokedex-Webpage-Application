@@ -16,17 +16,18 @@
 
 
 <form id="form" class="numbersearchbar" onsubmit="return false;">
-    <input  type="text" id="numbersearch" placeholder="Search by Number" />
+    <input  type="text" id="numbersearch" placeholder="Search by Number" onkeydown="searchByNumber()" />
     <input  type="submit"  onclick="storeNumber()" />
 </form>
 <br>
 <form id="form" class="namesearchbar" onsubmit="return false;">
-    <input  type="text" id="namesearch" placeholder="Search by Name" />
+    <input  type="text" id="namesearch" placeholder="Search by Name" onkeydown="searchByName()" />
     <input  type="submit"  onclick="storeName()" />
 </form>
 
 
-<ul class="no-bullet">
+
+<ul class="no-bullet" id="no-bullet">
     <li>
         <div class="card">
             <h3 class="description">#1 - Bulbasaur</h3>

@@ -179,3 +179,40 @@ function numberAccepted(){ //if number inputted from user matches any "ids" in p
     }
       alert(JSON.stringify(newStored)) // print the array that stores all  Pokemon Object search results
 }
+
+
+
+   
+
+for(i = 0; i < pokedex.length; i++){
+
+    if(pokedex[i].name.toLowerCase().includes(String(userInputName).toLowerCase())){
+        let divListElement = document.createElement("li");
+        let divCard = document.createElement("card");
+        divCard.setAttribute("class", "card");
+
+        let divImage = document.createElement("img");
+        divImage.setAttribute("src","Lab1-pokemon-images/" +(i+1)+ ".png");
+
+        let divName = document.createTextNode(pokedex[i].name);
+
+        let divType = document.createElement(pokedex[i].type);
+
+
+        divListElement.appendChild(divCard);//put <card> tag inside <li> tag
+        divCard.appendChild(divImage) // put <img> tag inside <card> tag
+        divCard.appendChild(divName); //put the name DOM element inside the card tag
+        divCard.appendChild(divType); //put the type DOM element inside the card tag
+
+
+
+
+    }
+
+}
+
+
+
+
+
+
