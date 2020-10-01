@@ -1,7 +1,7 @@
-//initial commit comment, testing if pushing to new 'lab2' branch is working.
+//second commit, created functionality where cards can appear and disappear to match user input
 const pokedex = [ //created an array where each index stored a Pokemon object and its respective attributes
     {
-        id: 1, //attribute for the pokemon's number in the Official Pokedex
+        id: "ID: 1", //attribute for the pokemon's number in the Official Pokedex
         name: "Bulbasaur",  // "name" is the attribute of the Pokemon's name
         type: "Grass/Poison. Rarity:4 " //"type" is the attribute storing the Pokemon's general description, such as its Type and Rarity
     },
@@ -182,34 +182,74 @@ function numberAccepted(){ //if number inputted from user matches any "ids" in p
 
 
 
-   
+function searchByName(){ //when you click button on name search bar launch function 
+
+    let divUserInputName= document.getElementById("namesearch").value;
+    //console.log("Search: " + divUserInputName);
+
+    let div = document.getElementById("newDiv");
+
+    if(div != null){ //if there's something that exists, remove it. If it doesnt then do nothing
+        div.parentNode.removeChild(div);
+    }
+    div = document.createElement("div"); 
+    div.setAttribute("id", "newDiv");
+
+    if(divUserInputName.length == 0) {//if no input exists, then don't add anything to the list
+      return;
+    }
+                                         
+    document.body.insertBefore(div, document.getElementById("no-bullet"));    
+    let unordered = document.createElement("ul");                               //declare unordered list
+    unordered.setAttribute("class", "no-bullet");                                       //set attributes of unordered list (and also gets rid of lines)
+    div.appendChild(unordered);
 
 for(i = 0; i < pokedex.length; i++){
+    //if you want to style the id and description
 
-    if(pokedex[i].name.toLowerCase().includes(String(userInputName).toLowerCase())){
-        let divListElement = document.createElement("li");
-        let divCard = document.createElement("card");
-        divCard.setAttribute("class", "card");
+    if(pokedex[i].name.toLowerCase().includes(String(divUserInputName).toLowerCase())){
+        let divListElement = document.createElement("li"); //create li 
+        divListElement.setAttribute("id", "appearance");
+        console.log("Hello")
+
+        let divCard = document.createElement("div"); 
+        divCard.setAttribute("class", "card"); 
 
         let divImage = document.createElement("img");
         divImage.setAttribute("src","Lab1-pokemon-images/" +(i+1)+ ".png");
 
         let divName = document.createTextNode(pokedex[i].name);
 
-        let divType = document.createElement(pokedex[i].type);
+        let divID = document.createElement("p");
+        divID.setAttribute("class", "pokemonnumber");
+        divID.append(pokedex[i].id);
 
 
+
+        //divName.setAttribute("id", "description");    
+
+        unordered.appendChild(divListElement);
         divListElement.appendChild(divCard);//put <card> tag inside <li> tag
-        divCard.appendChild(divImage) // put <img> tag inside <card> tag
         divCard.appendChild(divName); //put the name DOM element inside the card tag
-        divCard.appendChild(divType); //put the type DOM element inside the card tag
+        divCard.appendChild(divImage); // put <img> tag inside <card> tag
+        divCard.appendChild(divID);
+
+        
+    }
 
 
 
-
+    else{
+       // unordered=div.getElementsByTagName("unordered")[0];
+       // while(unordered.firstChild){
+            //unordered.removeChild(unordered.firstChild)
+       }
     }
 
 }
+
+
+
 
 
 

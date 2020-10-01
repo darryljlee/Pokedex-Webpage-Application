@@ -16,23 +16,26 @@
 
 
 <form id="form" class="numbersearchbar" onsubmit="return false;">
-    <input  type="text" id="numbersearch" placeholder="Search by Number" onkeydown="searchByNumber()" />
+    <input  type="text" id="numbersearch" placeholder="Search by Number" onkeyup="searchByNumber()" />
     <input  type="submit"  onclick="storeNumber()" />
 </form>
 <br>
 <form id="form" class="namesearchbar" onsubmit="return false;">
-    <input  type="text" id="namesearch" placeholder="Search by Name" onkeydown="searchByName()" />
+    <input  type="text" id="namesearch" placeholder="Search by Name" onkeyup="searchByName()" />
     <input  type="submit"  onclick="storeName()" />
 </form>
 
-
+<div id="newDiv"></div>
 
 <ul class="no-bullet" id="no-bullet">
     <li>
         <div class="card">
-            <h3 class="description">#1 - Bulbasaur</h3>
+            <h3 class="description">Bulbasaur</h3>
             <img src="Lab1-pokemon-images\1.png" alt="Bulbasaur" >
-            <label class="description">Type: Grass/Poison
+            <label class="description">
+                ID: 1
+                <br>
+                Type: Grass/Poison
                 <br>
                 Rarity:4
             </label>
@@ -40,9 +43,12 @@
     </li>
     <li>
         <div class="card">
-            <h3 class="description">#2 - Ivysaur</h3>
+            <h3 class="description">Ivysaur</h3>
             <img src="Lab1-pokemon-images\2.png" alt="Ivysaur" >
-            <label class="description">Type: Grass/Poison
+            <label class="description">
+                ID: 2
+                <br>
+                Type: Grass/Poison
                 <br>
                 Rarity:5
             </label>
@@ -50,9 +56,12 @@
     </li>
     <li>
         <div class="card">
-        <h3 class="description">#3 - Venusaur</h3>
+        <h3 class="description">Venusaur</h3>
         <img src="Lab1-pokemon-images\3.png" alt="Venusaur">
-        <label class="description">Type: Grass/Poison
+        <label class="description">
+            ID: 3
+            <br>
+            Type: Grass/Poison
             <br>
             Rarity:6
         </label>
@@ -60,9 +69,12 @@
     </li>
     <li>
         <div class="card">
-        <h3 class="description">#4 - Charmander</h3>
+        <h3 class="description">Charmander</h3>
         <img src="Lab1-pokemon-images\4.png" >
-        <label class="description">Type: Fire
+        <label class="description">
+            ID: 4
+            <br>
+            Type: Fire
             <br>
             Rarity:4
         </label>
@@ -70,9 +82,12 @@
     </li>
     <li>
         <div class="card">
-        <h3 class="description">#5 - Charmeleon</h3>
+        <h3 class="description">Charmeleon</h3>
         <img src="Lab1-pokemon-images\5.png" >
-        <label class="description">Type: Fire
+        <label class="description">
+            ID: 5
+            <br>
+            Type: Fire
             <br>
             Rarity:5
         </label>
@@ -80,9 +95,12 @@
     </li>
     <li>
         <div class="card">
-        <h3 class="description">#6 - Charizard</h3>
+        <h3 class="description">Charizard</h3>
         <img src="Lab1-pokemon-images\6.png">
-        <label class="description">Type: Fire/Flying
+        <label class="description">
+            ID: 6
+            <br>
+            Type: Fire/Flying
             <br>
             Rarity:6
         </label>
@@ -90,9 +108,12 @@
     </li>
     <li>
         <div class="card">
-        <h3 class="description">#7 - Squirtle</h3>
+        <h3 class="description">Squirtle</h3>
         <img src="Lab1-pokemon-images\7.png" >
-        <label class="description">Type: Water
+        <label class="description">
+            ID: 7
+            <br>
+            Type: Water
             <br>
             Rarity:4
         </label>
@@ -100,9 +121,12 @@
     </li>
     <li>
         <div class="card">
-        <h3 class="description">#8 - Wartortle</h3>
+        <h3 class="description">Wartortle</h3>
         <img src="Lab1-pokemon-images\8.png" >
-        <label class="description">Type: Water
+        <label class="description">
+            ID: 8
+            <br>
+            Type: Water
             <br>
             Rarity:5
         </label>
@@ -110,9 +134,12 @@
     </li>
     <li>
         <div class="card">
-        <h3 class="description">#9 - Blastoise</h3>
+        <h3 class="description">Blastoise</h3>
         <img src="Lab1-pokemon-images\9.png"  >
-        <label class="description">Type: Water
+        <label class="description">
+            ID: 9
+            <br>
+            Type: Water
             <br>
             Rarity:6
         </label>
@@ -120,9 +147,12 @@
     </li>
     <li>
         <div class="card">
-        <h3 class="description">#10 - Caterpie</h3>
+        <h3 class="description">Caterpie</h3>
         <img src="Lab1-pokemon-images\10.png"  >
-        <label class="description">Type: Bug
+        <label class="description">
+            ID: 10
+            <br>
+            Type: Bug
             <br>
             Rarity:1
         </label>
@@ -130,9 +160,12 @@
     </li>
     <li>
         <div class="card">
-        <h3 class="description">#11 - Metapod</h3>
+        <h3 class="description">Metapod</h3>
         <img src="Lab1-pokemon-images\11.png"  >
-        <label class="description">Type: Bug
+        <label class="description">
+            ID: 11
+            <br>
+            Type: Bug
             <br>
             Rarity:3
         </label>
@@ -140,9 +173,12 @@
     </li>
     <li>
         <div class="card">
-        <h3 class="description">#12 - Butterfree</h3>
+        <h3 class="description">Butterfree</h3>
         <img src="Lab1-pokemon-images\12.png"  >
-        <label class="description">Type: Bug/Flying
+        <label class="description">
+            ID: 12
+            <br>
+            Type: Bug/Flying
             <br>
             Rarity:4
         </label>
@@ -150,9 +186,12 @@
     </li>
     <li>
         <div class="card">
-        <h3 class="description">#13 - Weedle</h3>
+        <h3 class="description">Weedle</h3>
         <img src="Lab1-pokemon-images\13.png"  >
-        <label class="description">Type: Bug/Poison
+        <label class="description">
+            ID: 13
+            <br>
+            Type: Bug/Poison
             <br>
             Rarity:1
         </label>
@@ -160,9 +199,12 @@
     </li>
     <li>
         <div class="card">
-        <h3 class="description">#14 - Kakuna</h3>
+        <h3 class="description">Kakuna</h3>
         <img src="Lab1-pokemon-images\14.png"  >
-        <label class="description">Type: Bug/Poison
+        <label class="description">
+            ID: 14
+            <br>
+            Type: Bug/Poison
             <br>
             Rarity:3
         </label>
@@ -170,9 +212,12 @@
     </li>
     <li>
         <div class="card">
-        <h3 class="description">#15 - Beedrill</h3>
+        <h3 class="description">Beedrill</h3>
         <img src="Lab1-pokemon-images\15.png" >
-        <label class="description">Type: Bug/Poison
+        <label class="description">
+            ID: 15
+            <br>
+            Type: Bug/Poison
             <br>
             Rarity:4
         </label>
@@ -180,9 +225,12 @@
     </li>
     <li>
         <div class="card"> 
-        <h3 class="description">#16 - Pidgey</h3>
+        <h3 class="description">Pidgey</h3>
         <img src="Lab1-pokemon-images\16.png"  >
-        <label class="description">Type: Flying/Normal
+        <label class="description">
+            ID: 16
+            <br>
+            Type: Flying/Normal
             <br>
             Rarity:1
         </label>
@@ -190,9 +238,12 @@
     </li>
     <li>
         <div class="card"> 
-        <h3 class="description">#17 - Pidgeotto</h3>
+        <h3 class="description">Pidgeotto</h3>
         <img src="Lab1-pokemon-images\17.png" >
-        <label class="description">Type: Flying/Normal
+        <label class="description">
+            ID: 17
+            <br>
+            Type: Flying/Normal
             <br>
             Rarity:3
         </label>
@@ -200,9 +251,12 @@
     </li>
     <li>
         <div class="card"> 
-        <h3 class="description">#18 - Pidgeot</h3>
+        <h3 class="description">Pidgeot</h3>
         <img src="Lab1-pokemon-images\18.png">
-        <label class="description">Type: Flying/Normal
+        <label class="description">
+            ID: 18
+            <br>
+            Type: Flying/Normal
             <br>
             Rarity:4
         </label>
@@ -210,9 +264,12 @@
     </li>
     <li>
         <div class="card"> 
-        <h3 class="description">#19 - Rattata</h3>
+        <h3 class="description">Rattata</h3>
         <img src="Lab1-pokemon-images\19.png"  >
-        <label class="description">Type: Normal
+        <label class="description">
+            ID: 19
+            <br>
+            Type: Normal
             <br>
             Rarity:1
         </label>
@@ -220,9 +277,12 @@
     </li>
     <li>
         <div class="card"> 
-        <h3 class="description">#20 - Raticate</h3>
+        <h3 class="description">Raticate</h3>
         <img src="Lab1-pokemon-images\20.png"  >
-        <label class="description">Type: Normal
+        <label class="description">
+            ID: 20
+            <br>
+            Type: Normal
             <br>
             Rarity:4
         </label>
