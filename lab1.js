@@ -292,7 +292,9 @@ function searchByNumber(){
 
         unorderedFromNum.appendChild(listElementFromNum);
         listElementFromNum.appendChild(cardFromNum);
-     
+        
+        cardFromNum.appendChild(imgFromNum);
+        
         //cardFromNum.appendChild(descriptionFromNum);
         
         
