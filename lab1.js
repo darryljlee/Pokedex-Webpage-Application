@@ -287,7 +287,9 @@ function searchByNumber(){
 
         let nameFromNum = document.createTextNode(pokedex[i].name);
         
-        
+        let idFromNum = document.createElement("p");
+        idFromNum.setAttribute("class", "pokemonnumber");
+        idFromNum.append(pokedex[i].id);
 
         //let descriptionFromNum = document.createElement("p");
         //descriptionFromNum.setAttribute("class", "pokemonnumber");
@@ -296,7 +298,7 @@ function searchByNumber(){
         listElementFromNum.appendChild(cardFromNum);
         cardFromNum.appendChild(nameFromNum);
         cardFromNum.appendChild(imgFromNum);
-        
+        cardFromNum.appendChild(idFromNum);
         //cardFromNum.appendChild(descriptionFromNum);
         
         

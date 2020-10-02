@@ -56,7 +56,6 @@ ul.no-bullet {
   
  .references{
      text-align: center;
-     display: block;
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  }
 
@@ -99,6 +98,12 @@ ul.no-bullet {
   #newDiv{
     background-color: aquamarine;
   }
+
+  .holder{
+      position: fixed;
+  }
+
+ 
 
   
 
