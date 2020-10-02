@@ -3,7 +3,8 @@ const pokedex = [ //created an array where each index stored a Pokemon object an
     {
         id: "#1", //attribute for the pokemon's number in the Official Pokedex
         name: "Bulbasaur",  // "name" is the attribute of the Pokemon's name
-        type: "Type: Grass/Poison, Rarity:4 " //"type" is the attribute storing the Pokemon's general description, such as its Type and Rarity
+        type: "Type: Grass/Poison", //"type" is the attribute storing the Pokemon's general description, such as its Type and Rarity
+        rarity: "4"
     },
     {
         id: "#2",
@@ -222,6 +223,8 @@ function searchByName(){ //when you click button on name search bar launch funct
 
 
         let divName = document.createTextNode(pokedex[i].name);
+        //divName.setAttribute("id", "description");
+        
 
 
         let divID = document.createElement("p");
@@ -232,6 +235,7 @@ function searchByName(){ //when you click button on name search bar launch funct
         divDescription.setAttribute("class", "pokemonnumber");
         divDescription.append(pokedex[i].type);
 
+      
 
       
 
@@ -242,6 +246,7 @@ function searchByName(){ //when you click button on name search bar launch funct
         divCard.appendChild(divID);
         //divCard.document.write("<br>")
         divCard.appendChild(divDescription);
+        //divCard.appendChild(divRarity);
         }
     }
 
@@ -291,15 +296,16 @@ function searchByNumber(){
         idFromNum.setAttribute("class", "pokemonnumber");
         idFromNum.append(pokedex[i].id);
 
-        //let descriptionFromNum = document.createElement("p");
-        //descriptionFromNum.setAttribute("class", "pokemonnumber");
+        let descriptionFromNum = document.createElement("p");
+        descriptionFromNum.setAttribute("class", "pokemonnumber");
+        descriptionFromNum.append(pokedex[i].type)
 
         unorderedFromNum.appendChild(listElementFromNum);
         listElementFromNum.appendChild(cardFromNum);
         cardFromNum.appendChild(nameFromNum);
         cardFromNum.appendChild(imgFromNum);
         cardFromNum.appendChild(idFromNum);
-        //cardFromNum.appendChild(descriptionFromNum);
+        cardFromNum.appendChild(descriptionFromNum);
         
         
 

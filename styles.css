@@ -65,6 +65,11 @@ ul.no-bullet {
       font-family:Verdana, Geneva, Tahoma, sans-serif ; 
   }
 
+  #description{
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ; 
+}
+
   #appearance{
 
     text-align: center;
