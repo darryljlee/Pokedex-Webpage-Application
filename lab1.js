@@ -285,6 +285,8 @@ function searchByNumber(){
         imgFromNum.setAttribute("src", "Lab1-pokemon-images/" +(i+1)+ ".png");
         imgFromNum.setAttribute("class", "divCardImage")
 
+        let nameFromNum = document.createTextNode(pokedex[i].name);
+        
         
 
         //let descriptionFromNum = document.createElement("p");
@@ -292,7 +294,7 @@ function searchByNumber(){
 
         unorderedFromNum.appendChild(listElementFromNum);
         listElementFromNum.appendChild(cardFromNum);
-        
+        cardFromNum.appendChild(nameFromNum);
         cardFromNum.appendChild(imgFromNum);
         
         //cardFromNum.appendChild(descriptionFromNum);
