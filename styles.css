@@ -41,6 +41,18 @@ ul.no-bullet {
      color: black;
     border-radius: 5%;
   }
+
+  .newCard{
+    padding-top: 5%;
+    height: 400px;
+    width: 290px;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,0.9);
+    background-color: rgb(72, 195, 199);
+    text-align: center;
+   color: black;
+  border-radius: 5%;
+}
+
   
  .references{
      text-align: center;
@@ -54,9 +66,12 @@ ul.no-bullet {
   }
 
   #appearance{
+
     text-align: center;
     font-family:Verdana, Geneva, Tahoma, sans-serif ;
     font-weight: bold;
+    padding-bottom: 10%;
+    
   }
 
   .pokemonnumber{
@@ -73,9 +88,16 @@ ul.no-bullet {
       background-color: white;
       
   }
-
+  .divCardImage{
+    width: fit-content;
+    height: fit-content;
+    border: 4px solid #555;
+    border-radius: 10%;
+    background-color: white;
+  }
+  
   #newDiv{
-    background-color: darkcyan;
+    background-color: aquamarine;
   }
 
   

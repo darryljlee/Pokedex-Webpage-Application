@@ -1,106 +1,106 @@
 //second commit, created functionality where cards can appear and disappear to match user input
 const pokedex = [ //created an array where each index stored a Pokemon object and its respective attributes
     {
-        id: "ID: 1", //attribute for the pokemon's number in the Official Pokedex
+        id: "#1", //attribute for the pokemon's number in the Official Pokedex
         name: "Bulbasaur",  // "name" is the attribute of the Pokemon's name
-        type: "Grass/Poison. Rarity:4 " //"type" is the attribute storing the Pokemon's general description, such as its Type and Rarity
+        type: "Type: Grass/Poison, Rarity:4 " //"type" is the attribute storing the Pokemon's general description, such as its Type and Rarity
     },
     {
-        id:2,
+        id: "#2",
         name: "Ivysaur", 
         type: "Grass/Poison. Rarity:5"
     },
     {
-        id:3,
+        id:"#3",
         name: "Venusaur",
         type: "Grass/Poison. Rarity: 6"
     },
     {
-        id:4,
+        id:"#4",
         name: "Charmander",
         type: "Fire.  Rarity:4"
  
     },
     {
-        id:5,
+        id:"#5",
         name: "Charmeleon",
         type: "Fire. Rarity:5"
     
     },
     {
-        id:6,
+        id:"#6",
         name: "Charizard",
         type: "Fire/Flying.  Rarity:6"
       
     },
     {
-        id:7,
+        id:"#7",
         name: "Squirtle",
         type: "Water.  Rarity:4"
        
     },
     {
-        id:8,
+        id:"#8",
         name: "Wartortle",
         type: "Water. Rarity:5"     
     },
     {
-        id:9,
+        id:"#9",
         name: "Blastoise",
         type: "Water.  Rarity:6 "
     },
     {
-        id:10,
+        id:"#10",
         name: "Caterpie",
         type: "Bug.  Rarity:1"
     },
     {
-        id:11,
+        id:"#11",
         name: "Metapod",
         type: "Bug.  Rarity:3"
     },
     {
-        id:12,
+        id:"#12",
         name: "Butterfree",
         type: "Bug/Flying.  Rarity:4"
     },
     {
-        id:13,
+        id:"#13",
         name: "Weedle",
         type: "Bug/Poison.  Rarity:1"
     },
     {
-        id:14,
+        id:"#14",
         name: "Kakuna",
         type: "Bug/Poison.  Rarity:3"
     },
     {
-        id:15,
+        id:"#15",
         name: "Beedrill",
         type: "Bug/Poison.  Rarity:4"
     },
     {
-        id:16,
+        id:"#16",
         name: "Pidgey",
         type: "Normal/Flying.  Rarity:1"
     },
     {
-        id:17,
+        id:"#17",
         name: "Pidgeotto",
         type: "Normal/Flying.  Rarity:3"
     },
     {
-        id:18,
+        id:"#18",
         name: "Pidgeot",
         type: "Normal/Flying.  Rarity:4"
     },
     {
-        id:19,
+        id:"#19",
         name: "Rattata",
         type: "Normal.  Rarity:1"
     },
     {
-        id:20,
+        id:"#20",
         name: "Raticate",
         type: "Normal.  Rarity:4"
     },
@@ -189,64 +189,65 @@ function searchByName(){ //when you click button on name search bar launch funct
 
     let div = document.getElementById("newDiv");
 
-    if(div != null){ //if there's something that exists, remove it. If it doesnt then do nothing
-        div.parentNode.removeChild(div);
+    if(div != null){ //if there's something that exists in the search bar, remove it. If it doesn't then do nothing
+        div.parentNode.removeChild(div); 
     }
-    div = document.createElement("div"); 
-    div.setAttribute("id", "newDiv");
+   div = document.createElement("div"); 
+   div.setAttribute("id", "newDiv");
 
     if(divUserInputName.length == 0) {//if no input exists, then don't add anything to the list
       return;
     }
                                          
     document.body.insertBefore(div, document.getElementById("no-bullet"));    
-    let unordered = document.createElement("ul");                               //declare unordered list
+    let unordered = document.createElement("ul");                                        //declare unordered list
     unordered.setAttribute("class", "no-bullet");                                       //set attributes of unordered list (and also gets rid of lines)
     div.appendChild(unordered);
 
-for(i = 0; i < pokedex.length; i++){
+    for(i = 0; i < pokedex.length; i++){
     //if you want to style the id and description
 
     if(pokedex[i].name.toLowerCase().includes(String(divUserInputName).toLowerCase())){
         let divListElement = document.createElement("li"); //create li 
         divListElement.setAttribute("id", "appearance");
-        console.log("Hello")
 
         let divCard = document.createElement("div"); 
         divCard.setAttribute("class", "card"); 
+        divCard.setAttribute("id", "newDiv");
+
 
         let divImage = document.createElement("img");
         divImage.setAttribute("src","Lab1-pokemon-images/" +(i+1)+ ".png");
+        divImage.setAttribute("class", "divCardImage");
+
 
         let divName = document.createTextNode(pokedex[i].name);
+
 
         let divID = document.createElement("p");
         divID.setAttribute("class", "pokemonnumber");
         divID.append(pokedex[i].id);
 
+        let divDescription = document.createElement("p");
+        divDescription.setAttribute("class", "pokemonnumber");
+        divDescription.append(pokedex[i].type);
 
 
-        //divName.setAttribute("id", "description");    
+      
 
         unordered.appendChild(divListElement);
         divListElement.appendChild(divCard);//put <card> tag inside <li> tag
         divCard.appendChild(divName); //put the name DOM element inside the card tag
         divCard.appendChild(divImage); // put <img> tag inside <card> tag
         divCard.appendChild(divID);
-
-        
-    }
-
-
-
-    else{
-       // unordered=div.getElementsByTagName("unordered")[0];
-       // while(unordered.firstChild){
-            //unordered.removeChild(unordered.firstChild)
-       }
+        //divCard.document.write("<br>")
+        divCard.appendChild(divDescription);
+        }
     }
 
 }
+
+
 
 
 
