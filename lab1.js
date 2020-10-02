@@ -249,6 +249,63 @@ function searchByName(){ //when you click button on name search bar launch funct
 
 
 
+function searchByNumber(){
+    let divUserInputNumber = document.getElementById("numbersearch").value;
+
+    let divFromNumber = document.getElementById("numDiv");
+
+    if(divFromNumber != null){
+        divFromNumber.parentNode.removeChild(divFromNumber);
+    }
+    divFromNumber = document.createElement("div");
+    divFromNumber.setAttribute("id", "numDiv");
+
+    if(divUserInputNumber == 0){
+        return;
+    }
+
+    document.body.insertBefore(divFromNumber, document.getElementById("no-bullet"));
+    let unorderedFromNum=document.createElement("ul");  
+    unorderedFromNum.setAttribute("class", "no-bullet");
+    divFromNumber.appendChild(unorderedFromNum);
+
+    for (i = 0; i < pokedex.length; i++){
+        
+        if(pokedex[i].id.includes(String(divUserInputNumber))){
+        let listElementFromNum = document.createElement("li");
+        listElementFromNum.setAttribute("id", "appearance");
+        
+
+        let cardFromNum = document.createElement("div");
+        cardFromNum.setAttribute("class", "newCard");
+        cardFromNum.setAttribute("id", "newDiv");
+
+
+        let imgFromNum = document.createElement("img");
+        imgFromNum.setAttribute("src", "Lab1-pokemon-images/" +(i+1)+ ".png");
+        imgFromNum.setAttribute("class", "divCardImage")
+
+        
+
+        //let descriptionFromNum = document.createElement("p");
+        //descriptionFromNum.setAttribute("class", "pokemonnumber");
+
+        unorderedFromNum.appendChild(listElementFromNum);
+        listElementFromNum.appendChild(cardFromNum);
+     
+        //cardFromNum.appendChild(descriptionFromNum);
+        
+        
+
+
+
+        }
+
+    }
+
+
+}
+
 
 
 
