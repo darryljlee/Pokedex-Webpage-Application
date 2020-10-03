@@ -203,79 +203,67 @@ function searchByName(){ //when you click button on name search bar launch funct
     unordered.setAttribute("class", "no-bullet");                                       //set attributes of unordered list (and also gets rid of lines)
     div.appendChild(unordered);
 
-    for(i = 0; i < pokedex.length; i++){
-    //if you want to style the id and description
+    for(i = 0; i < pokedex.length; i++){ //create for loop to help search through array
 
-    if(pokedex[i].name.toLowerCase().includes(String(divUserInputName).toLowerCase())){
-        let divListElement = document.createElement("li"); //create li 
-        divListElement.setAttribute("id", "appearance");
+    if(pokedex[i].name.toLowerCase().includes(String(divUserInputName).toLowerCase())){ //if the pokemon's id contains the characters of the user input, create a <li> tag, and also put a card <div> 
+        let divListElement = document.createElement("li"); //create li tag
+        divListElement.setAttribute("id", "appearance"); //set li tag id
 
-        let divCard = document.createElement("div"); 
-        divCard.setAttribute("class", "card"); 
-        divCard.setAttribute("id", "newDiv");
-
-
-        let divImage = document.createElement("img");
-        divImage.setAttribute("src","Lab1-pokemon-images/" +(i+1)+ ".png");
-        divImage.setAttribute("class", "divCardImage");
+        let divCard = document.createElement("div"); //create a <div> element that has the card
+        divCard.setAttribute("class", "card"); //set class of the card
+        divCard.setAttribute("id", "newDiv"); //set id of the card to "newDiv"
 
 
-        let divName = document.createTextNode(pokedex[i].name);
-        //divName.setAttribute("id", "description");
-        
+        let divImage = document.createElement("img"); //create an <img> tag
+        divImage.setAttribute("src","Lab1-pokemon-images/" +(i+1)+ ".png"); //set the src to the images inside the Lab1-pokemon-images
+        divImage.setAttribute("class", "divCardImage"); // set the attribute of the class to divCardImage
 
 
-        let divID = document.createElement("p");
-        divID.setAttribute("class", "pokemonnumber");
-        divID.append(pokedex[i].id);
+        let divName = document.createTextNode(pokedex[i].name); //create a text node called divName that stores a Pokemon's name property
 
-        let divDescription = document.createElement("p");
-        divDescription.setAttribute("class", "pokemonnumber");
-        divDescription.append(pokedex[i].type);
+        let divID = document.createElement("p"); //create a <p> tag called divID
+        divID.setAttribute("class", "pokemonnumber"); //set class of the divID to "pokemonnumber" in styles.css
+        divID.append(pokedex[i].id); //store the id value of the Pokemon in the array
 
-      
+        let divDescription = document.createElement("p"); //create a <p> tag called divDescription
+        divDescription.setAttribute("class", "pokemonnumber"); //set the class of the divDescription to pokemonnumber
+        divDescription.append(pokedex[i].type); //store the Pokemon object's type property and append to the divDescription     
 
-      
-
-        unordered.appendChild(divListElement);
-        divListElement.appendChild(divCard);//put <card> tag inside <li> tag
-        divCard.appendChild(divName); //put the name DOM element inside the card tag
-        divCard.appendChild(divImage); // put <img> tag inside <card> tag
-        divCard.appendChild(divID);
-        //divCard.document.write("<br>")
-        divCard.appendChild(divDescription);
-        //divCard.appendChild(divRarity);
+        unordered.appendChild(divListElement); //append the listElement onto the unordered list
+        divListElement.appendChild(divCard); //put <div> tag of the card inside <li> tag
+        divCard.appendChild(divName); //put the text node inside the card tag
+        divCard.appendChild(divImage); // put <img> tag inside card tag
+        divCard.appendChild(divID); //put the divID <p> inside the card tag
+        divCard.appendChild(divDescription); //put the divDescription inside the card tag
         }
     }
 
 }
 
+function searchByNumber(){ //this function is called when key is "up" in the number search bar 
+    let divUserInputNumber = document.getElementById("numbersearch").value; //store the value of the user input in the number bar
 
-
-function searchByNumber(){
-    let divUserInputNumber = document.getElementById("numbersearch").value;
-
-    let divFromNumber = document.getElementById("numDiv");
+    let divFromNumber = document.getElementById("numDiv"); 
 
     if(divFromNumber != null){
-        divFromNumber.parentNode.removeChild(divFromNumber);
+        divFromNumber.parentNode.removeChild(divFromNumber); 
     }
-    divFromNumber = document.createElement("div");
-    divFromNumber.setAttribute("id", "numDiv");
+    divFromNumber = document.createElement("div"); //create a div when user enters something in number bar
+    divFromNumber.setAttribute("id", "numDiv"); //set the id of divNumber to "numDiv"
 
     if(divUserInputNumber == 0){
         return;
     }
 
-    document.body.insertBefore(divFromNumber, document.getElementById("no-bullet"));
-    let unorderedFromNum=document.createElement("ul");  
-    unorderedFromNum.setAttribute("class", "no-bullet");
-    divFromNumber.appendChild(unorderedFromNum);
+    document.body.insertBefore(divFromNumber, document.getElementById("no-bullet")); //put content block created from number input just before unordered list from lab1 
+    let unorderedFromNum=document.createElement("ul");   //create unordered list inside "number" div
+    unorderedFromNum.setAttribute("class", "no-bullet"); //set attributes of unordered list inside "number" div
+    divFromNumber.appendChild(unorderedFromNum); //append unorderedList behind divFromNumber
 
-    for (i = 0; i < pokedex.length; i++){
+    for (i = 0; i < pokedex.length; i++){ 
         
-        if(pokedex[i].id.includes(String(divUserInputNumber))){
-        let listElementFromNum = document.createElement("li");
+        if(pokedex[i].id.includes(String(divUserInputNumber))){ 
+        let listElementFromNum = document.createElement("li"); 
         listElementFromNum.setAttribute("id", "appearance");
         
 
@@ -297,8 +285,6 @@ function searchByNumber(){
         let descriptionFromNum = document.createElement("p");
         descriptionFromNum.setAttribute("class", "pokemonnumber");
         descriptionFromNum.append(pokedex[i].type)
-
-       
 
         unorderedFromNum.appendChild(listElementFromNum);
         listElementFromNum.appendChild(cardFromNum);
