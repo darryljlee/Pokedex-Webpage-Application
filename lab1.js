@@ -1,109 +1,107 @@
-//second commit, created functionality where cards can appear and disappear to match user input
 const pokedex = [ //created an array where each index stored a Pokemon object and its respective attributes
     {
         id: "#1", //attribute for the pokemon's number in the Official Pokedex
         name: "Bulbasaur",  // "name" is the attribute of the Pokemon's name
-        type: "Type: Grass/Poison", //"type" is the attribute storing the Pokemon's general description, such as its Type and Rarity
-        rarity: "4"
+        type: "Type: Grass/Poison. Rarity: 4", //"type" is the attribute storing the Pokemon's general description, such as its Type and Rarity
     },
     {
         id: "#2",
         name: "Ivysaur", 
-        type: "Grass/Poison. Rarity:5"
+        type: "Type: Grass/Poison. Rarity:5"
     },
     {
         id:"#3",
         name: "Venusaur",
-        type: "Grass/Poison. Rarity: 6"
+        type: "Type: Grass/Poison. Rarity: 6"
     },
     {
         id:"#4",
         name: "Charmander",
-        type: "Fire.  Rarity:4"
+        type: "Type: Fire.  Rarity:4"
  
     },
     {
         id:"#5",
         name: "Charmeleon",
-        type: "Fire. Rarity:5"
+        type: "Type: Fire. Rarity:5"
     
     },
     {
         id:"#6",
         name: "Charizard",
-        type: "Fire/Flying.  Rarity:6"
+        type: "Type: Fire/Flying.  Rarity:6"
       
     },
     {
         id:"#7",
         name: "Squirtle",
-        type: "Water.  Rarity:4"
+        type: "Type: Water.  Rarity:4"
        
     },
     {
         id:"#8",
         name: "Wartortle",
-        type: "Water. Rarity:5"     
+        type: "Type: Water. Rarity:5"     
     },
     {
         id:"#9",
         name: "Blastoise",
-        type: "Water.  Rarity:6 "
+        type: "Type: Water.  Rarity:6 "
     },
     {
         id:"#10",
         name: "Caterpie",
-        type: "Bug.  Rarity:1"
+        type: "Type: Bug.  Rarity:1"
     },
     {
         id:"#11",
         name: "Metapod",
-        type: "Bug.  Rarity:3"
+        type: "Type: Bug.  Rarity:3"
     },
     {
         id:"#12",
         name: "Butterfree",
-        type: "Bug/Flying.  Rarity:4"
+        type: "Type: Bug/Flying.  Rarity:4"
     },
     {
         id:"#13",
         name: "Weedle",
-        type: "Bug/Poison.  Rarity:1"
+        type: "Type: Bug/Poison.  Rarity:1"
     },
     {
         id:"#14",
         name: "Kakuna",
-        type: "Bug/Poison.  Rarity:3"
+        type: "Type: Bug/Poison.  Rarity:3"
     },
     {
         id:"#15",
         name: "Beedrill",
-        type: "Bug/Poison.  Rarity:4"
+        type: "Type: Bug/Poison.  Rarity:4"
     },
     {
         id:"#16",
         name: "Pidgey",
-        type: "Normal/Flying.  Rarity:1"
+        type: "Type: Normal/Flying.  Rarity:1"
     },
     {
         id:"#17",
         name: "Pidgeotto",
-        type: "Normal/Flying.  Rarity:3"
+        type: "Type: Normal/Flying.  Rarity:3"
     },
     {
         id:"#18",
         name: "Pidgeot",
-        type: "Normal/Flying.  Rarity:4"
+        type: "Type: Normal/Flying.  Rarity:4"
     },
     {
         id:"#19",
         name: "Rattata",
-        type: "Normal.  Rarity:1"
+        type: "Type: Normal.  Rarity:1"
     },
     {
         id:"#20",
         name: "Raticate",
-        type: "Normal.  Rarity:4"
+        type: "Type: Normal.  Rarity:4"
     },
 ]
 
@@ -300,6 +298,8 @@ function searchByNumber(){
         descriptionFromNum.setAttribute("class", "pokemonnumber");
         descriptionFromNum.append(pokedex[i].type)
 
+       
+
         unorderedFromNum.appendChild(listElementFromNum);
         listElementFromNum.appendChild(cardFromNum);
         cardFromNum.appendChild(nameFromNum);
@@ -307,6 +307,7 @@ function searchByNumber(){
         cardFromNum.appendChild(idFromNum);
         cardFromNum.appendChild(descriptionFromNum);
         
+
         
 
 
